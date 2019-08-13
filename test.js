@@ -2,10 +2,15 @@ var qs = require("querystring");
 var http = require("https");
 var xmlparser = require("xml-js");
 
-var myData = qs.stringify({ xml: '<query>\n    <appInfo>\n        <appID>emdevel</appID>\n        <appCertificate>emdevel</appCertificate>\n    </appInfo>\n       <userDevicesQuery>  \n        <userID>BALKBIM</userID>  \n    </userDevicesQuery>  \n</query>' })
+var username = 'emdevel';
+var password = 'emdevel';
+var hostname = '10.26.56.52';
+var portnumber = '8443';
+
+var myData = qs.stringify({ xml: `<query>\n    <appInfo>\n        <appID>${username}</appID>\n        <appCertificate>${password}</appCertificate>\n    </appInfo>\n       <userDevicesQuery>  \n        <userID>BALKBIM</userID>  \n    </userDevicesQuery>  \n</query>` })
 var options = {
   "method": "POST",
-  "hostname": "10.26.56.52",
+  "hostname": hostname,
   "port": "8443",
   "rejectUnauthorized": false,
   "path": "/emservice/EMServiceServlet",
@@ -13,7 +18,7 @@ var options = {
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "*/*",
     "Cache-Control": "no-cache",
-    "Host": "10.26.56.52:8443",
+    "Host": hostname +':'+portnumber,
     "Accept-Encoding": "gzip, deflate",
     "Content-Length": myData.length,
     "Connection": "keep-alive",
