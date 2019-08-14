@@ -8,7 +8,15 @@ var password = process.env.PASSWORD;
 var hostname = process.env.HOSTNAME;
 var portnumber = process.env.PORTNUMBER;
 
-var myData = qs.stringify({ xml: `<query>\n    <appInfo>\n        <appID>${username}</appID>\n        <appCertificate>${password}</appCertificate>\n    </appInfo>\n       <logoutAll>  \n  </logoutAll>  \n</query>` })
+var myData = qs.stringify({ xml: `<query>\n\    
+                                        <appInfo>\n\
+                                                <appID>${username}</appID>\n\
+                                                <appCertificate>${password}</appCertificate>\n\
+                                        </appInfo>\n\
+                                        <logoutAll>\n\
+                                        </logoutAll>\n\
+                                    </query>` });
+
 var options = {
     "method": "POST",
     "hostname": hostname,
