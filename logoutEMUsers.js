@@ -38,7 +38,7 @@ var options = {
 var req = http.request(options, function (res) {
     var chunks = [];
 
-    console.log(`Request sent! Response from the EM service was: ${res.statusCode}`);
+    
 
     res.on("data", function (chunk) {
 
@@ -47,10 +47,12 @@ var req = http.request(options, function (res) {
 
     res.on("end", function () {
         var body = Buffer.concat(chunks);
+        console.log(`Response from the EM service was: ${res.statusCode}`);
         console.log(`Body of response xml document:` + body.toString());
 
     });
 });
 
 req.write(myData);
+console.log('Request sent! ');
 req.end();
