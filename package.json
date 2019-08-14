@@ -1,0 +1,26 @@
+{
+  "name": "logoutemusers",
+  "version": "1.0.0",
+  "description": "NodeJS script to log out every Extension Mobility user from phones registered to a CUCM cluster",
+  "main": "logoutemusers.js",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "node-fetch": "^2.6.0",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "iholck"
+  },
+  "keywords": [
+    "nodejs",
+    "CUCM"
+  ],
+  "author": "Ivar Holck",
+  "license": "ISC"
+}
