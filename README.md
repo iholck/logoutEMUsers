@@ -4,7 +4,7 @@ A NodeJS application for logging out every EM User from CUCM
 
 ## Description
 
-logoutEMUsers is a small application that communicates with the Extension Mobility service on CUCM via the [Extension Mobility API] (<https://developer.cisco.com/docs/extension-mobility-api/)> and tells it to log out every Extension Mobility user on the system. It can be run via CLI or as a scheduled service.
+logoutEMUsers is a small application that communicates with the Extension Mobility service on CUCM via the [Extension Mobility API] (<https://developer.cisco.com/docs/extension-mobility-api/>) and tells it to log out every Extension Mobility user on the system. It can be run via CLI or as a scheduled service.
 
 ## Requirements
 
