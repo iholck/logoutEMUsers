@@ -3,25 +3,25 @@ var http = require("https");
 
 require('dotenv').config()
 
-var username = process.env.USERNAME;
-var password = process.env.PASSWORD;
+var username = process.env.EMUSERNAME;
+var password = process.env.EMPASSWORD;
 var hostname = process.env.HOSTNAME;
 var portnumber = process.env.PORTNUMBER;
 
-var myData = qs.stringify({ xml: `<query>\n\    
-                                        <appInfo>\n\
-                                                <appID>${username}</appID>\n\
-                                                <appCertificate>${password}</appCertificate>\n\
-                                        </appInfo>\n\
-                                        <logoutAll>\n\
-                                        </logoutAll>\n\
-                                    </query>` });
+var myData = qs.stringify({ xml: `<request>\    
+                                        <appInfo>\
+                                                <appID>${username}</appID>\
+                                                <appCertificate>${password}</appCertificate>\
+                                        </appInfo>\
+                                        <logoutAll>\
+                                        </logoutAll>\
+                                    </request>` });
 
 var options = {
     "method": "POST",
     "hostname": hostname,
     "port": portnumber,
-    "rejectUnauthorized": process.env.ENFORCECERT,
+    "rejectUnauthorized": false,
     "path": "/emservice/EMServiceServlet",
     "headers": {
         "Content-Type": "application/x-www-form-urlencoded",
